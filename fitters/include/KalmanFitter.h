@@ -67,8 +67,10 @@ class KalmanFitter : public AbsKalmanFitter {
 
  private:
   bool fitTrack(Track* tr, const AbsTrackRep* rep, double& chi2, double& ndf, int startId, int endId, int& nFailedHits);
+ protected:
   void processTrackPoint(TrackPoint* tp,
       const AbsTrackRep* rep, double& chi2, double& ndf, int direction);
+ private:
 
 #ifndef __CINT__
   boost::scoped_ptr<MeasuredStateOnPlane> currentState_;
