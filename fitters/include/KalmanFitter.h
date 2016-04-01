@@ -65,12 +65,10 @@ class KalmanFitter : public AbsKalmanFitter {
 
   void useSquareRootFormalism(bool squareRootFormalism = true) {squareRootFormalism_ = squareRootFormalism;}
 
- private:
-  bool fitTrack(Track* tr, const AbsTrackRep* rep, double& chi2, double& ndf, int startId, int endId, int& nFailedHits);
  protected:
+  bool fitTrack(Track* tr, const AbsTrackRep* rep, double& chi2, double& ndf, int startId, int endId, int& nFailedHits);
   void processTrackPoint(TrackPoint* tp,
       const AbsTrackRep* rep, double& chi2, double& ndf, int direction);
- private:
 
 #ifndef __CINT__
   boost::scoped_ptr<MeasuredStateOnPlane> currentState_;
